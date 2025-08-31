@@ -111,3 +111,72 @@ This CRM project uses **Celery + Celery Beat** to generate weekly reports.
    sudo apt install redis-server
    sudo systemctl enable redis
    sudo systemctl start redis
+
+tep 7: Documentation
+
+File: crm/README.md
+
+# CRM Celery Report Setup
+
+This CRM project uses **Celery + Celery Beat** to generate weekly reports.
+
+## Setup Steps
+
+1. **Install Redis**
+
+   On Ubuntu:
+   ```bash
+   sudo apt update
+   sudo apt install redis-server
+   sudo systemctl enable redis
+   sudo systemctl start redis
+
+
+Install dependencies
+
+pip install -r requirements.txt
+
+
+Run migrations
+
+python manage.py migrate
+
+
+Start Celery worker
+
+celery -A crm worker -l info
+
+
+Start Celery Beat
+
+celery -A crm beat -l info
+
+
+Verify logs
+
+cat /tmp/crm_report_log.txt
+
+
+Expected log format:
+
+2025-09-01 06:00:00 - Report: 120 customers, 340 orders, 50000 revenue
+
+
+---
+
+## 📂 Repo Structure After This Task
+
+
+
+alx-backend-graphql_crm/
+├── requirements.txt
+├── crm/
+│ ├── init.py
+│ ├── celery.py
+│ ├── tasks.py
+│ ├── settings.py
+│ ├── README.md
+│ └── ...
+
+
+---
