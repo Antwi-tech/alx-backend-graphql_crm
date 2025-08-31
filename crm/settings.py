@@ -4,6 +4,8 @@ from celery.schedules import crontab
 INSTALLED_APPS = [
     'django_crontab',
     'django_celery_beat',
+    "django_crontab",   # add this line
+    "crm",
 
 ]
 
