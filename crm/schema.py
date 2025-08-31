@@ -9,6 +9,7 @@ from decimal import Decimal
 from graphene_django.filter import DjangoFilterConnectionField
 from graphql import GraphQLError
 
+from crm.models import Product
 from .filters import CustomerFilter, ProductFilter, OrderFilter
 from .models import Customer, Product, Order
 
