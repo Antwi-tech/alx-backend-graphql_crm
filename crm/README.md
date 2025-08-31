@@ -97,4 +97,17 @@ Expected log format:
 
 ---
 
-✅ **Done!** Your Celery report task is now set up and scheduled.
+# CRM Celery Report Setup
+
+This CRM project uses **Celery + Celery Beat** to generate weekly reports.
+
+## Setup Steps
+
+1. **Install Redis**
+
+   On Ubuntu:
+   ```bash
+   sudo apt update
+   sudo apt install redis-server
+   sudo systemctl enable redis
+   sudo systemctl start redis
